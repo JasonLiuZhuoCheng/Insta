@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from instagram.models import Post, Post2
+from instagram.models import Post
 
 admin.site.register(Post)
-admin.site.register(Post2)
+
 
 
