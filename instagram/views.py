@@ -16,6 +16,8 @@ class PostsView(ListView):
      
     def get_queryset(self):  
         #don't want default behavior, i.e. all user posts, just want following posts
+        if not self.request.user.is_authenticated:
+            return
         current_user = self.request.user
         following = set()
         for conn in UserConnection.objects.filter(creator=current_user).select_related('following'):
